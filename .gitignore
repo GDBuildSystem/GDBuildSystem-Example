@@ -1,3 +1,6 @@
+# Godot Engine Download
+tools/godot-editor
+
 # Godot 4+ specific ignores
 .godot/
 
