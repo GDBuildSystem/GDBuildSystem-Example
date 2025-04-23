@@ -1,0 +1,277 @@
+[gd_scene load_steps=26 format=3 uid="uid://bdlpf0i7bg3xy"]
+
+[ext_resource type="Script" uid="uid://btxdm067adtx6" path="res://scripts/game/mainmenu_scene.gd" id="1_6qmel"]
+[ext_resource type="Texture2D" uid="uid://cr70v0t7psmit" path="res://content/bundles/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="1_j5orx"]
+[ext_resource type="AudioStream" uid="uid://df10q1wr8rd75" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Cuddle Clouds.ogg" id="2_ihycd"]
+[ext_resource type="FontFile" uid="uid://ddxxwydumgyci" path="res://content/bundles/Fonts/Jacquard12-Regular.ttf" id="2_t4p8n"]
+[ext_resource type="AudioStream" uid="uid://4jjkjtijv7po" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Evening Harmony.ogg" id="3_nhefx"]
+[ext_resource type="Texture2D" uid="uid://d0affre132rm5" path="res://content/bundles/UI/Buttons/Button_Blue_3Slides.png" id="3_tobk1"]
+[ext_resource type="AudioStream" uid="uid://lb5as604kc8a" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Floating Dream.ogg" id="4_36s3u"]
+[ext_resource type="Texture2D" uid="uid://bgsxdc6xun7t0" path="res://content/bundles/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_xwyc0"]
+[ext_resource type="Texture2D" uid="uid://c70hhd6q4heb8" path="res://content/bundles/UI/Buttons/Button_Hover_3Slides.png" id="5_22mg8"]
+[ext_resource type="AudioStream" uid="uid://dklekjs2rwbmi" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Gentle Breeze.ogg" id="5_n3drt"]
+[ext_resource type="AudioStream" uid="uid://dm5bqx5xuo27q" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Golden Gleam.ogg" id="6_05tjj"]
+[ext_resource type="Texture2D" uid="uid://bpiwdyvn635qw" path="res://content/bundles/UI/Buttons/Button_Disable_3Slides.png" id="6_nab8t"]
+[ext_resource type="AudioStream" uid="uid://ce5mn7b4ut6tu" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Polar Lights.ogg" id="7_q8fe0"]
+[ext_resource type="Theme" uid="uid://coyuxds16n3ha" path="res://content/bundles/UI/game_theme.tres" id="7_xwyc0"]
+[ext_resource type="AudioStream" uid="uid://ceis82xb84ld1" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Sunlight Through Leaves.ogg" id="8_36ff0"]
+[ext_resource type="AudioStream" uid="uid://l6uxd43k8k1g" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Wanderers Tale.ogg" id="9_gqmlb"]
+[ext_resource type="AudioStream" uid="uid://c38bpmx3i85ok" path="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Whispering Woods.ogg" id="10_xg8th"]
+[ext_resource type="PackedScene" uid="uid://h8uy1dvxfkyw" path="res://scenes/game/gameworld.tscn" id="11_i34nx"]
+[ext_resource type="PackedScene" uid="uid://bh1cw2bp76mc6" path="res://prefabs/ui/ui_settings_panel.tscn" id="19_ihycd"]
+[ext_resource type="Script" uid="uid://c2qfq2cla7jyi" path="res://scripts/game/ui/UI_SFX_Manager.gd" id="19_k1nxn"]
+[ext_resource type="AudioStream" uid="uid://cqxedgsc7u31u" path="res://content/bundles/SFX/UI Soundpack/OGG/Wood Block1.ogg" id="20_x3xwi"]
+[ext_resource type="AudioStream" uid="uid://bch5y7ikp04iq" path="res://content/bundles/SFX/UI Soundpack/OGG/Wood Block2.ogg" id="21_6qmel"]
+[ext_resource type="PackedScene" uid="uid://dktvwogb8l036" path="res://prefabs/ui/ui_credits_panel.tscn" id="22_36s3u"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nmu06"]
+streams_count = 9
+stream_0/stream = ExtResource("2_ihycd")
+stream_1/stream = ExtResource("3_nhefx")
+stream_2/stream = ExtResource("4_36s3u")
+stream_3/stream = ExtResource("5_n3drt")
+stream_4/stream = ExtResource("6_05tjj")
+stream_5/stream = ExtResource("7_q8fe0")
+stream_6/stream = ExtResource("8_36ff0")
+stream_7/stream = ExtResource("9_gqmlb")
+stream_8/stream = ExtResource("10_xg8th")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nab8t"]
+font_size = 24
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Mainmenu" type="Node" node_paths=PackedStringArray("settings_panel", "credits_panel")]
+script = ExtResource("1_6qmel")
+update_music = SubResource("AudioStreamRandomizer_nmu06")
+play_scene = ExtResource("11_i34nx")
+settings_panel = NodePath("CanvasLayer/RootControl/SettingsPanel")
+credits_panel = NodePath("CanvasLayer/RootControl/CreditsPanel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RootControl" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/RootControl"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_xwyc0")
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/RootControl/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+texture = ExtResource("1_j5orx")
+expand_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -20.0
+offset_right = 46.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tiny Swords"
+
+[node name="Spacer" type="MarginContainer" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_tobk1")
+texture_pressed = ExtResource("4_xwyc0")
+texture_hover = ExtResource("5_22mg8")
+texture_disabled = ExtResource("6_nab8t")
+texture_focused = ExtResource("5_22mg8")
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -23.0
+offset_right = 26.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_t4p8n")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+label_settings = SubResource("LabelSettings_nab8t")
+horizontal_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_tobk1")
+texture_pressed = ExtResource("4_xwyc0")
+texture_hover = ExtResource("5_22mg8")
+texture_disabled = ExtResource("6_nab8t")
+texture_focused = ExtResource("5_22mg8")
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -23.0
+offset_right = 26.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_t4p8n")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+label_settings = SubResource("LabelSettings_nab8t")
+horizontal_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_tobk1")
+texture_pressed = ExtResource("4_xwyc0")
+texture_hover = ExtResource("5_22mg8")
+texture_disabled = ExtResource("6_nab8t")
+texture_focused = ExtResource("5_22mg8")
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/RootControl/MarginContainer/VBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -23.0
+offset_right = 26.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_t4p8n")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+label_settings = SubResource("LabelSettings_nab8t")
+horizontal_alignment = 1
+
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer/RootControl"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -50.0
+offset_right = -11.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_tobk1")
+texture_pressed = ExtResource("4_xwyc0")
+texture_hover = ExtResource("5_22mg8")
+texture_disabled = ExtResource("6_nab8t")
+texture_focused = ExtResource("5_22mg8")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/RootControl/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -12.5
+offset_right = 26.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_t4p8n")
+theme_override_font_sizes/font_size = 18
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="SettingsPanel" parent="CanvasLayer/RootControl" instance=ExtResource("19_ihycd")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -245.0
+offset_right = 245.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsPanel" parent="CanvasLayer/RootControl" instance=ExtResource("22_36s3u")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -245.0
+offset_right = 245.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI_SFX_Manager" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("root_control")]
+script = ExtResource("19_k1nxn")
+audio_events = Dictionary[int, AudioStream]({
+0: ExtResource("20_x3xwi"),
+1: ExtResource("21_6qmel")
+})
+root_control = NodePath("../CanvasLayer/RootControl")
+metadata/_custom_type_script = "uid://c2qfq2cla7jyi"
+
+[connection signal="pressed" from="CanvasLayer/RootControl/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RootControl/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RootControl/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RootControl/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b15lrs2d1ocnh"]
+
+[ext_resource type="Texture2D" uid="uid://cwdbik04gxlw" path="res://content/bundles/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="1_d5g2f"]
+[ext_resource type="Texture2D" uid="uid://bj02y14lnxt56" path="res://content/bundles/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="2_y6nhn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4wa1"]
+atlas = ExtResource("1_d5g2f")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhowc"]
+atlas = ExtResource("2_y6nhn")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psfuh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4wa1")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhowc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoblinHouse" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_psfuh")
+autoplay = "default"

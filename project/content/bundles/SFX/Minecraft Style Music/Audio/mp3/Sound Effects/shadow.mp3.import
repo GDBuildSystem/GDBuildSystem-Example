@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duaqd62v1tiah"
+path="res://.godot/imported/shadow.mp3-ebdea2b23cce3a4915a6a087941a1d6d.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Sound Effects/shadow.mp3"
+dest_files=["res://.godot/imported/shadow.mp3-ebdea2b23cce3a4915a6a087941a1d6d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

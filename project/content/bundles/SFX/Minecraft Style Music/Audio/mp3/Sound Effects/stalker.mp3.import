@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctaspg6i5c34t"
+path="res://.godot/imported/stalker.mp3-9a5932c3d70858e012e1219f41a61fe5.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Sound Effects/stalker.mp3"
+dest_files=["res://.godot/imported/stalker.mp3-9a5932c3d70858e012e1219f41a61fe5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

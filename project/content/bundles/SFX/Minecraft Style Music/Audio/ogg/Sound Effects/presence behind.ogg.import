@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfyspypiqprmi"
+path="res://.godot/imported/presence behind.ogg-abf0d9fd1a97fdb4f06df08acdefc620.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Sound Effects/presence behind.ogg"
+dest_files=["res://.godot/imported/presence behind.ogg-abf0d9fd1a97fdb4f06df08acdefc620.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

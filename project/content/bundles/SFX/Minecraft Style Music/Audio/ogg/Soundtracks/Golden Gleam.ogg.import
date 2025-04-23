@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dm5bqx5xuo27q"
+path="res://.godot/imported/Golden Gleam.ogg-cd89f26aa1d76c3905b128d323261857.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Golden Gleam.ogg"
+dest_files=["res://.godot/imported/Golden Gleam.ogg-cd89f26aa1d76c3905b128d323261857.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

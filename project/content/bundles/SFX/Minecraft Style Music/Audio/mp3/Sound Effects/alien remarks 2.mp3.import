@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cag1kb8j467yg"
+path="res://.godot/imported/alien remarks 2.mp3-72a18a4025fc09c84e6e81435f3ac2ee.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Sound Effects/alien remarks 2.mp3"
+dest_files=["res://.godot/imported/alien remarks 2.mp3-72a18a4025fc09c84e6e81435f3ac2ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

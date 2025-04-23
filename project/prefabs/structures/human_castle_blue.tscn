@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvueiu3hl0qmt"]
+
+[ext_resource type="Texture2D" uid="uid://btpxsk0ee7841" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Construction.png" id="1_4xjlu"]
+[ext_resource type="Texture2D" uid="uid://2ccrsrayxco8" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_urjxy"]
+[ext_resource type="Texture2D" uid="uid://c7lx2xloj8qac" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="3_nemqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vf84"]
+atlas = ExtResource("1_4xjlu")
+region = Rect2(0, 0, 320, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8737c"]
+atlas = ExtResource("2_urjxy")
+region = Rect2(0, 0, 320, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl8ku"]
+atlas = ExtResource("3_nemqs")
+region = Rect2(0, 0, 320, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq84y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vf84")
+}],
+"loop": true,
+"name": &"construction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8737c")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl8ku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CastleBlue" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bq84y")
+animation = &"construction"
+autoplay = "default"

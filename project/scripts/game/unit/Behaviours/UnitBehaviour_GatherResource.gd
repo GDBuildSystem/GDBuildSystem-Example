@@ -1,0 +1,2 @@
+class_name UnitBehaviour_GatherResource
+extends UnitBehaviourBase

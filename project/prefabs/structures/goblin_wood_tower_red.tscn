@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcf6pcx4nsvpk"]
+
+[ext_resource type="Texture2D" uid="uid://br10ywp6h5wqc" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_InConstruction.png" id="1_xyw4v"]
+[ext_resource type="Texture2D" uid="uid://bbn3pj8tw13el" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="2_1r4dc"]
+[ext_resource type="Texture2D" uid="uid://dmikiaevfjr8a" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Red.png" id="3_0rpwf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b6pd"]
+atlas = ExtResource("1_xyw4v")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b78k4"]
+atlas = ExtResource("2_1r4dc")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppn0o"]
+atlas = ExtResource("3_0rpwf")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfc3d"]
+atlas = ExtResource("3_0rpwf")
+region = Rect2(256, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm1vc"]
+atlas = ExtResource("3_0rpwf")
+region = Rect2(512, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p556h"]
+atlas = ExtResource("3_0rpwf")
+region = Rect2(768, 0, 256, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb1jn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b6pd")
+}],
+"loop": true,
+"name": &"construction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b78k4")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppn0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfc3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm1vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p556h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WoodTowerRed" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jb1jn")
+autoplay = "default"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cncwdidk85ie8"
+path="res://.godot/imported/Coffee1.ogg-f7d75d058f0399859e4f4b879c9c3eef.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/UI Soundpack/OGG/Coffee1.ogg"
+dest_files=["res://.godot/imported/Coffee1.ogg-f7d75d058f0399859e4f4b879c9c3eef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

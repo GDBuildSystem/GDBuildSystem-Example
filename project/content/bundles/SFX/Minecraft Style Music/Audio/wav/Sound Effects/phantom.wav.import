@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b642bkfnweqaf"
+path="res://.godot/imported/phantom.wav-a42a8a59f0ac3043bd9152b42b5e9952.sample"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/wav/Sound Effects/phantom.wav"
+dest_files=["res://.godot/imported/phantom.wav-a42a8a59f0ac3043bd9152b42b5e9952.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

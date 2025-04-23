@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8r8ek1i7pru2"]
+
+[ext_resource type="Texture2D" uid="uid://cjt0e6r2d1vlo" path="res://content/bundles/Resources/Gold Mine/GoldMine_Active.png" id="1_gro7h"]
+[ext_resource type="Texture2D" uid="uid://ivbnfygolb3o" path="res://content/bundles/Resources/Gold Mine/GoldMine_Destroyed.png" id="2_h7vnc"]
+[ext_resource type="Texture2D" uid="uid://qq8e5pw5seyf" path="res://content/bundles/Resources/Gold Mine/GoldMine_Inactive.png" id="3_2mqs5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j7b8"]
+atlas = ExtResource("1_gro7h")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i58kh"]
+atlas = ExtResource("2_h7vnc")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epim2"]
+atlas = ExtResource("3_2mqs5")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxqw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j7b8")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i58kh")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epim2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GoldMine" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lxqw6")
+autoplay = "default"

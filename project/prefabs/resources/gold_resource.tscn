@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgg2ufqq3luyc"]
+
+[ext_resource type="Texture2D" uid="uid://c4d22vourerca" path="res://content/bundles/Resources/Resources/G_Spawn.png" id="1_k54ip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j7b8"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epim2"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i58kh"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei38y"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df4e"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rcjl"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th1co"]
+atlas = ExtResource("1_k54ip")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqihf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j7b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epim2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i58kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei38y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rcjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th1co")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GSpawn" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hqihf")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0

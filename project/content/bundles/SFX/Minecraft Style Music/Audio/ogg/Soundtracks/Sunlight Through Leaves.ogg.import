@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ceis82xb84ld1"
+path="res://.godot/imported/Sunlight Through Leaves.ogg-788eefa120c73b7f03d4008724a2484b.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Sunlight Through Leaves.ogg"
+dest_files=["res://.godot/imported/Sunlight Through Leaves.ogg-788eefa120c73b7f03d4008724a2484b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

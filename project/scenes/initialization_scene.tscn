@@ -1,8 +1,23 @@
-[gd_scene format=3 uid="uid://ciimsadyy5vm8"]
+[gd_scene load_steps=5 format=3 uid="uid://ciimsadyy5vm8"]
+
+[ext_resource type="Script" uid="uid://wcs2cp2eurv" path="res://scripts/AssetLoader/asset_loader.gd" id="1_o3fm8"]
+[ext_resource type="PackedScene" uid="uid://bdlpf0i7bg3xy" path="res://scenes/game/mainmenu.tscn" id="2_g7qee"]
+[ext_resource type="Script" uid="uid://doxuro0lsjoai" path="res://addons/gdbuildsystem/runtime/BundleLoader.gd" id="2_sinkd"]
+[ext_resource type="Script" uid="uid://8fhqnwkpxd35" path="res://scripts/AssetLoader/asset_loader_ui.gd" id="3_3gi30"]
 
 [node name="InitializationScene" type="Node"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="AssetLoader" type="Node" parent="."]
+script = ExtResource("1_o3fm8")
+next_scene = ExtResource("2_g7qee")
+
+[node name="BundleLoader" type="Node" parent="."]
+script = ExtResource("2_sinkd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("progress_bar", "loading_text")]
+script = ExtResource("3_3gi30")
+progress_bar = NodePath("Panel/MarginContainer/VBoxContainer/ProgressBar")
+loading_text = NodePath("Panel/MarginContainer/VBoxContainer/Label")
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -36,3 +51,8 @@ horizontal_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+
+[connection signal="on_loaded_asset" from="AssetLoader" to="CanvasLayer" method="_on_asset_loader_loaded_asset"]
+[connection signal="on_progress_update" from="AssetLoader" to="CanvasLayer" method="_on_asset_loader_progress_update"]
+[connection signal="on_inform_to_be_loaded" from="BundleLoader" to="AssetLoader" method="add_need"]
+[connection signal="on_loaded_bundle" from="BundleLoader" to="AssetLoader" method="_handle_finished_asset"]

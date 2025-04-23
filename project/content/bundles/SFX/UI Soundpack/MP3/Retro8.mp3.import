@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dctkv570ra454"
+path="res://.godot/imported/Retro8.mp3-c27fde0d15379a0d2979b579054a527d.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/UI Soundpack/MP3/Retro8.mp3"
+dest_files=["res://.godot/imported/Retro8.mp3-c27fde0d15379a0d2979b579054a527d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

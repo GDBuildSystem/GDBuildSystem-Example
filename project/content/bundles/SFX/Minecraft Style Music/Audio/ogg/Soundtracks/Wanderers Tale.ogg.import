@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l6uxd43k8k1g"
+path="res://.godot/imported/Wanderers Tale.ogg-6a4ad14ede10fbb024166c94f8b5f2ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Wanderers Tale.ogg"
+dest_files=["res://.godot/imported/Wanderers Tale.ogg-6a4ad14ede10fbb024166c94f8b5f2ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

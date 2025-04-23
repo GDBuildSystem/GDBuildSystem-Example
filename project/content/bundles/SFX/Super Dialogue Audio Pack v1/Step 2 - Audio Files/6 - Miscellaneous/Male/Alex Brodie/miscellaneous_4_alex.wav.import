@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc2ow58xnop2w"
+path="res://.godot/imported/miscellaneous_4_alex.wav-0743e97bc0a518b22b65858e9199d699.sample"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_4_alex.wav"
+dest_files=["res://.godot/imported/miscellaneous_4_alex.wav-0743e97bc0a518b22b65858e9199d699.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bunc1pm2kaknw"]
+
+[ext_resource type="Texture2D" uid="uid://rcroeuj88ur1" path="res://content/bundles/Factions/Knights/Buildings/House/House_Construction.png" id="1_m5eus"]
+[ext_resource type="Texture2D" uid="uid://bcial04op5rff" path="res://content/bundles/Factions/Knights/Buildings/House/House_Destroyed.png" id="2_sluwp"]
+[ext_resource type="Texture2D" uid="uid://bhsr5w1hyhqog" path="res://content/bundles/Factions/Knights/Buildings/House/House_Blue.png" id="3_d53nm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nmcm"]
+atlas = ExtResource("1_m5eus")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38c2i"]
+atlas = ExtResource("2_sluwp")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqi66"]
+atlas = ExtResource("3_d53nm")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q35fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nmcm")
+}],
+"loop": true,
+"name": &"construction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38c2i")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqi66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HouseBlue" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_q35fy")
+autoplay = "default"

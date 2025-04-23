@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhibyn7psd77l"
+path="res://.godot/imported/Gentle Breeze.mp3-16e8a362bf1ce711d631a06608abd2b7.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Soundtracks/Gentle Breeze.mp3"
+dest_files=["res://.godot/imported/Gentle Breeze.mp3-16e8a362bf1ce711d631a06608abd2b7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

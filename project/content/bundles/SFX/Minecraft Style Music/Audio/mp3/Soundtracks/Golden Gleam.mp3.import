@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6xjdsorp80n4"
+path="res://.godot/imported/Golden Gleam.mp3-02eb87fceb8f6a85f97c64178d2855c1.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Soundtracks/Golden Gleam.mp3"
+dest_files=["res://.godot/imported/Golden Gleam.mp3-02eb87fceb8f6a85f97c64178d2855c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

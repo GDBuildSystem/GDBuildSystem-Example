@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnt0jvrmvunow"
+path="res://.godot/imported/stalker.ogg-a4e3ead179982de8d6596b2867963a7d.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Sound Effects/stalker.ogg"
+dest_files=["res://.godot/imported/stalker.ogg-a4e3ead179982de8d6596b2867963a7d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

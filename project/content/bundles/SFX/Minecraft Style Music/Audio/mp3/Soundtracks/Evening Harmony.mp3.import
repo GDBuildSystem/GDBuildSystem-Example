@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdubet4dauc84"
+path="res://.godot/imported/Evening Harmony.mp3-868c333529c795d144dfe33c8804d871.mp3str"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/mp3/Soundtracks/Evening Harmony.mp3"
+dest_files=["res://.godot/imported/Evening Harmony.mp3-868c333529c795d144dfe33c8804d871.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ce5mn7b4ut6tu"
+path="res://.godot/imported/Polar Lights.ogg-94e0e913246466345c9ccdb274b131ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Soundtracks/Polar Lights.ogg"
+dest_files=["res://.godot/imported/Polar Lights.ogg-94e0e913246466345c9ccdb274b131ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

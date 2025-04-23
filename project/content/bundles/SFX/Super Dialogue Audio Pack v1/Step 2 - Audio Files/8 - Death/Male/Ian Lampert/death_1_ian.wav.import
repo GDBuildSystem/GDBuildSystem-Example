@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgcrkp0ri1kp4"
+path="res://.godot/imported/death_1_ian.wav-2ca2a433d7770715a63c5d7086fa6666.sample"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Super Dialogue Audio Pack v1/Step 2 - Audio Files/8 - Death/Male/Ian Lampert/death_1_ian.wav"
+dest_files=["res://.godot/imported/death_1_ian.wav-2ca2a433d7770715a63c5d7086fa6666.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

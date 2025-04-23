@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l6pab26n7bqj"
+path="res://.godot/imported/alien remarks.ogg-d27db73a369c05db56e25fc0dcb2f150.oggvorbisstr"
+
+[deps]
+
+source_file="res://content/bundles/SFX/Minecraft Style Music/Audio/ogg/Sound Effects/alien remarks.ogg"
+dest_files=["res://.godot/imported/alien remarks.ogg-d27db73a369c05db56e25fc0dcb2f150.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
