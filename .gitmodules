@@ -1,3 +1,3 @@
 [submodule "project/addons"]
 	path = project/addons
-	url = https://github.com/GDBuildSystem/GDBuildSystem
+	url = git@github.com:GDBuildSystem/GDBuildSystem
