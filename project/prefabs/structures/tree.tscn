@@ -1,6 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://hpaahk666r52"]
+[gd_scene load_steps=15 format=3 uid="uid://hpaahk666r52"]
 
 [ext_resource type="Texture2D" uid="uid://b3xn8x5mvj76o" path="res://content/bundles/Resources/Trees/Tree.png" id="1_odf6j"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="2_gl3l8"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="3_2m73p"]
+[ext_resource type="Resource" uid="uid://2a2pjxmhom4h" path="res://data/resources/Wood.tres" id="4_r7gs1"]
+[ext_resource type="Script" uid="uid://cg6068wkj3l0s" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GenerateResources.gd" id="5_kye5s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5nyk"]
 atlas = ExtResource("1_odf6j")
@@ -69,7 +73,19 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Resource" id="Resource_2xb1b"]
+script = ExtResource("5_kye5s")
+item = ExtResource("4_r7gs1")
+tick_amount = 25
+tick_interval = 2.5
+start_amount = 0
+limited_amount = 100
+revive_delay = 10.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
 [node name="Tree" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_uaw4s")
 autoplay = "default"
 frame_progress = 0.268904
+script = ExtResource("2_gl3l8")
+behaviours = Array[ExtResource("3_2m73p")]([SubResource("Resource_2xb1b")])

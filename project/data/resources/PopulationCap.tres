@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=2 format=3 uid="uid://1b2eakg6qovc"]
+
+[ext_resource type="Script" uid="uid://cbg8ftfj4s5ha" path="res://scripts/game/resourceItem/ResourceItem.gd" id="1_p78t2"]
+
+[resource]
+script = ExtResource("1_p78t2")
+name = "Population Cap"
+metadata/_custom_type_script = "uid://cbg8ftfj4s5ha"

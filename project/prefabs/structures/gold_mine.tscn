@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8r8ek1i7pru2"]
+[gd_scene load_steps=13 format=3 uid="uid://c8r8ek1i7pru2"]
 
 [ext_resource type="Texture2D" uid="uid://cjt0e6r2d1vlo" path="res://content/bundles/Resources/Gold Mine/GoldMine_Active.png" id="1_gro7h"]
 [ext_resource type="Texture2D" uid="uid://ivbnfygolb3o" path="res://content/bundles/Resources/Gold Mine/GoldMine_Destroyed.png" id="2_h7vnc"]
 [ext_resource type="Texture2D" uid="uid://qq8e5pw5seyf" path="res://content/bundles/Resources/Gold Mine/GoldMine_Inactive.png" id="3_2mqs5"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="4_h7vnc"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="5_ibrj8"]
+[ext_resource type="Resource" uid="uid://i6u4qm6u7wt8" path="res://data/resources/Gold.tres" id="6_iqj07"]
+[ext_resource type="Script" uid="uid://cg6068wkj3l0s" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GenerateResources.gd" id="7_eu5b6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j7b8"]
 atlas = ExtResource("1_gro7h")
@@ -43,6 +47,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_puu5y"]
+script = ExtResource("7_eu5b6")
+item = ExtResource("6_iqj07")
+tick_amount = 3
+tick_interval = 1.0
+start_amount = 0
+limited_amount = 2500
+revive_delay = -1.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
 [node name="GoldMine" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_lxqw6")
 autoplay = "default"
+script = ExtResource("4_h7vnc")
+behaviours = Array[ExtResource("5_ibrj8")]([SubResource("Resource_puu5y")])

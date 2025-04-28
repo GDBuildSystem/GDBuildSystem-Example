@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bunc1pm2kaknw"]
+[gd_scene load_steps=15 format=3 uid="uid://bunc1pm2kaknw"]
 
 [ext_resource type="Texture2D" uid="uid://rcroeuj88ur1" path="res://content/bundles/Factions/Knights/Buildings/House/House_Construction.png" id="1_m5eus"]
 [ext_resource type="Texture2D" uid="uid://bcial04op5rff" path="res://content/bundles/Factions/Knights/Buildings/House/House_Destroyed.png" id="2_sluwp"]
 [ext_resource type="Texture2D" uid="uid://bhsr5w1hyhqog" path="res://content/bundles/Factions/Knights/Buildings/House/House_Blue.png" id="3_d53nm"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="4_sluwp"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="5_38c2i"]
+[ext_resource type="Resource" uid="uid://1b2eakg6qovc" path="res://data/resources/PopulationCap.tres" id="6_oqi66"]
+[ext_resource type="Script" uid="uid://cg6068wkj3l0s" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GenerateResources.gd" id="7_q35fy"]
+[ext_resource type="Resource" uid="uid://i6u4qm6u7wt8" path="res://data/resources/Gold.tres" id="8_oqi66"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5nmcm"]
 atlas = ExtResource("1_m5eus")
@@ -43,6 +48,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_fxmyg"]
+script = ExtResource("7_q35fy")
+item = ExtResource("6_oqi66")
+tick_amount = 0
+tick_interval = 0.0
+start_amount = 5
+limited_amount = -1
+revive_delay = -1.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
+[sub_resource type="Resource" id="Resource_q35fy"]
+script = ExtResource("7_q35fy")
+item = ExtResource("8_oqi66")
+tick_amount = 1
+tick_interval = 5.0
+start_amount = 0
+limited_amount = -1
+revive_delay = -1.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
 [node name="HouseBlue" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_q35fy")
 autoplay = "default"
+script = ExtResource("4_sluwp")
+behaviours = Array[ExtResource("5_38c2i")]([SubResource("Resource_fxmyg"), SubResource("Resource_q35fy")])

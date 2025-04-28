@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=4 format=3 uid="uid://qohhrlshqu1p"]
+
+[ext_resource type="Script" uid="uid://cbg8ftfj4s5ha" path="res://scripts/game/resourceItem/ResourceItem.gd" id="1_n5st0"]
+[ext_resource type="PackedScene" uid="uid://xmlnqsqbudfg" path="res://prefabs/resources/meat_resource.tscn" id="1_xdpwm"]
+[ext_resource type="Texture2D" uid="uid://cvolk3uwe16qc" path="res://content/bundles/Resources/Resources/M_Idle_(NoShadow).png" id="3_ofunl"]
+
+[resource]
+script = ExtResource("1_n5st0")
+name = "Meat"
+prefab = ExtResource("1_xdpwm")
+static_icon = ExtResource("3_ofunl")
+metadata/_custom_type_script = "uid://cbg8ftfj4s5ha"

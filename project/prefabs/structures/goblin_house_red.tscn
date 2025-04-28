@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b15lrs2d1ocnh"]
+[gd_scene load_steps=14 format=3 uid="uid://b15lrs2d1ocnh"]
 
 [ext_resource type="Texture2D" uid="uid://cwdbik04gxlw" path="res://content/bundles/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="1_d5g2f"]
 [ext_resource type="Texture2D" uid="uid://bj02y14lnxt56" path="res://content/bundles/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="2_y6nhn"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="3_y6nhn"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="4_ljssi"]
+[ext_resource type="Script" uid="uid://cg6068wkj3l0s" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GenerateResources.gd" id="5_n13u3"]
+[ext_resource type="Resource" uid="uid://1b2eakg6qovc" path="res://data/resources/PopulationCap.tres" id="5_nfic5"]
+[ext_resource type="Script" uid="uid://cbg8ftfj4s5ha" path="res://scripts/game/resourceItem/ResourceItem.gd" id="7_1sadq"]
+[ext_resource type="Resource" uid="uid://i6u4qm6u7wt8" path="res://data/resources/Gold.tres" id="8_0tiey"]
+[ext_resource type="Resource" uid="uid://2a2pjxmhom4h" path="res://data/resources/Wood.tres" id="9_cte6x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4wa1"]
 atlas = ExtResource("1_d5g2f")
@@ -30,6 +37,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_nfic5"]
+script = ExtResource("5_n13u3")
+item = ExtResource("5_nfic5")
+tick_amount = 0
+tick_interval = 0.0
+start_amount = 5
+limited_amount = 100
+revive_delay = -1.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
 [node name="GoblinHouse" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_psfuh")
 autoplay = "default"
+script = ExtResource("3_y6nhn")
+behaviours = Array[ExtResource("4_ljssi")]([SubResource("Resource_nfic5")])
+cost = Dictionary[ExtResource("7_1sadq"), int]({
+ExtResource("8_0tiey"): 45,
+ExtResource("9_cte6x"): 10
+})

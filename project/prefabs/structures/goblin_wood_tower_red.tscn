@@ -1,8 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcf6pcx4nsvpk"]
+[gd_scene load_steps=18 format=3 uid="uid://dcf6pcx4nsvpk"]
 
 [ext_resource type="Texture2D" uid="uid://br10ywp6h5wqc" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_InConstruction.png" id="1_xyw4v"]
 [ext_resource type="Texture2D" uid="uid://bbn3pj8tw13el" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Destroyed.png" id="2_1r4dc"]
 [ext_resource type="Texture2D" uid="uid://dmikiaevfjr8a" path="res://content/bundles/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Red.png" id="3_0rpwf"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="4_nhdgc"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="5_0ypw5"]
+[ext_resource type="Script" uid="uid://dove5vq3xx8rb" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GuardPoint.gd" id="6_wupwy"]
+[ext_resource type="Script" uid="uid://cbg8ftfj4s5ha" path="res://scripts/game/resourceItem/ResourceItem.gd" id="7_frf5q"]
+[ext_resource type="Resource" uid="uid://i6u4qm6u7wt8" path="res://data/resources/Gold.tres" id="8_plllb"]
+[ext_resource type="Resource" uid="uid://2a2pjxmhom4h" path="res://data/resources/Wood.tres" id="9_4518a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b6pd"]
 atlas = ExtResource("1_xyw4v")
@@ -64,6 +70,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_5hgho"]
+script = ExtResource("6_wupwy")
+metadata/_custom_type_script = "uid://dove5vq3xx8rb"
+
 [node name="WoodTowerRed" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_jb1jn")
 autoplay = "default"
+script = ExtResource("4_nhdgc")
+behaviours = Array[ExtResource("5_0ypw5")]([SubResource("Resource_5hgho")])
+cost = Dictionary[ExtResource("7_frf5q"), int]({
+ExtResource("8_plllb"): 150,
+ExtResource("9_4518a"): 100
+})

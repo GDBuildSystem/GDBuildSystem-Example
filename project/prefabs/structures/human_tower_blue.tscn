@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bke3w5c1fj7qx"]
+[gd_scene load_steps=12 format=3 uid="uid://bke3w5c1fj7qx"]
 
 [ext_resource type="Texture2D" uid="uid://bcxiglw14wue7" path="res://content/bundles/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="1_mwbqb"]
 [ext_resource type="Texture2D" uid="uid://dowdr72fqt8yk" path="res://content/bundles/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="2_vhdx3"]
 [ext_resource type="Texture2D" uid="uid://c77gputgi7d0p" path="res://content/bundles/Factions/Knights/Buildings/Tower/Tower_Blue.png" id="3_2qp12"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="4_vhdx3"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="5_hrhbc"]
+[ext_resource type="Script" uid="uid://dove5vq3xx8rb" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GuardPoint.gd" id="6_43nhl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4wa1"]
 atlas = ExtResource("1_mwbqb")
@@ -43,7 +46,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_o74wh"]
+script = ExtResource("6_43nhl")
+metadata/_custom_type_script = "uid://dove5vq3xx8rb"
+
 [node name="TowerBlue" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_0y63o")
 animation = &"construction"
 autoplay = "default"
+script = ExtResource("4_vhdx3")
+behaviours = Array[ExtResource("5_hrhbc")]([SubResource("Resource_o74wh")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=324 format=4 uid="uid://h8uy1dvxfkyw"]
+[gd_scene load_steps=325 format=4 uid="uid://h8uy1dvxfkyw"]
 
 [ext_resource type="Texture2D" uid="uid://c0odv20nxdywn" path="res://content/bundles/Factions/Knights/Troops/Dead/Dead.png" id="1_32eqi"]
 [ext_resource type="Texture2D" uid="uid://c3if2i5t4pp46" path="res://content/bundles/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Blue_(NoArms).png" id="2_mnqvo"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://didw0igqwk32f" path="res://content/bundles/Terrain/Water/Rocks/Rocks_01.png" id="15_ilmbm"]
 [ext_resource type="Script" uid="uid://bu81s1i8gx30n" path="res://scripts/game/gameplay_camera.gd" id="18_oubqb"]
 [ext_resource type="Shader" uid="uid://bk13pmlktcx1o" path="res://scripts/game/territory/territory_shader.tres" id="19_icdfa"]
+[ext_resource type="Script" uid="uid://cb4ksiba34y6v" path="res://scripts/game/territory/territory_manager.gd" id="19_mjhq3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilmbm"]
 texture = ExtResource("14_ht40r")
@@ -2725,8 +2726,10 @@ shape = SubResource("RectangleShape2D_ih4u5")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="TerritoryVisualizer" type="Node" parent="."]
+script = ExtResource("19_mjhq3")
 
 [node name="TeamBlue" type="Node2D" parent="TerritoryVisualizer"]
+visible = false
 material = SubResource("ShaderMaterial_icdfa")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="TerritoryVisualizer/TeamBlue"]

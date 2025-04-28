@@ -1,0 +1,2 @@
+class_name BuildingBehaviour_GuardPoint
+extends BuildingBehaviour

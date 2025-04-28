@@ -1,23 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciimsadyy5vm8"]
+[gd_scene load_steps=8 format=3 uid="uid://ciimsadyy5vm8"]
 
 [ext_resource type="Script" uid="uid://wcs2cp2eurv" path="res://scripts/AssetLoader/asset_loader.gd" id="1_o3fm8"]
+[ext_resource type="Script" uid="uid://vcs0re5a4cf2" path="res://scripts/game/init_scene.gd" id="1_tq408"]
 [ext_resource type="PackedScene" uid="uid://bdlpf0i7bg3xy" path="res://scenes/game/mainmenu.tscn" id="2_g7qee"]
 [ext_resource type="Script" uid="uid://doxuro0lsjoai" path="res://addons/gdbuildsystem/runtime/BundleLoader.gd" id="2_sinkd"]
 [ext_resource type="Script" uid="uid://8fhqnwkpxd35" path="res://scripts/AssetLoader/asset_loader_ui.gd" id="3_3gi30"]
+[ext_resource type="Texture2D" uid="uid://vgol35rpuaqn" path="res://content/k2BhWls.png" id="5_tq408"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq408"]
+bg_color = Color(0.278431, 0.670588, 0.662745, 1)
 
 [node name="InitializationScene" type="Node"]
+script = ExtResource("1_tq408")
+next_scene = ExtResource("2_g7qee")
 
 [node name="AssetLoader" type="Node" parent="."]
 script = ExtResource("1_o3fm8")
-next_scene = ExtResource("2_g7qee")
 
 [node name="BundleLoader" type="Node" parent="."]
 script = ExtResource("2_sinkd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("progress_bar", "loading_text")]
 script = ExtResource("3_3gi30")
-progress_bar = NodePath("Panel/MarginContainer/VBoxContainer/ProgressBar")
-loading_text = NodePath("Panel/MarginContainer/VBoxContainer/Label")
+progress_bar = NodePath("Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar")
+loading_text = NodePath("Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Label")
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -25,6 +31,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tq408")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tq408")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -43,15 +61,30 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "loading..."
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 
+[connection signal="on_fully_loaded" from="AssetLoader" to="." method="on_start_fully_loaded"]
+[connection signal="on_inform_needs" from="AssetLoader" to="." method="on_inform_needs"]
 [connection signal="on_loaded_asset" from="AssetLoader" to="CanvasLayer" method="_on_asset_loader_loaded_asset"]
 [connection signal="on_progress_update" from="AssetLoader" to="CanvasLayer" method="_on_asset_loader_progress_update"]
 [connection signal="on_inform_to_be_loaded" from="BundleLoader" to="AssetLoader" method="add_need"]

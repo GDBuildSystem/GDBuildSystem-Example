@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvueiu3hl0qmt"]
+[gd_scene load_steps=13 format=3 uid="uid://bvueiu3hl0qmt"]
 
 [ext_resource type="Texture2D" uid="uid://btpxsk0ee7841" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Construction.png" id="1_4xjlu"]
 [ext_resource type="Texture2D" uid="uid://2ccrsrayxco8" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="2_urjxy"]
 [ext_resource type="Texture2D" uid="uid://c7lx2xloj8qac" path="res://content/bundles/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="3_nemqs"]
+[ext_resource type="Script" uid="uid://ctl4wyhkvpavs" path="res://scripts/game/building/Building.gd" id="4_urjxy"]
+[ext_resource type="Script" uid="uid://cfgimjrsa8kq3" path="res://scripts/game/building/Behaviour/BuildingBehaviour.gd" id="5_lj8ks"]
+[ext_resource type="Resource" uid="uid://1b2eakg6qovc" path="res://data/resources/PopulationCap.tres" id="6_biyfu"]
+[ext_resource type="Script" uid="uid://cg6068wkj3l0s" path="res://scripts/game/building/Behaviour/BuildingBehaviour_GenerateResources.gd" id="7_w38y3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vf84"]
 atlas = ExtResource("1_4xjlu")
@@ -43,7 +47,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_g7f5x"]
+script = ExtResource("7_w38y3")
+item = ExtResource("6_biyfu")
+tick_amount = 0
+tick_interval = 0.0
+start_amount = 15
+limited_amount = -1
+revive_delay = -1.0
+metadata/_custom_type_script = "uid://cg6068wkj3l0s"
+
 [node name="CastleBlue" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_bq84y")
 animation = &"construction"
 autoplay = "default"
+script = ExtResource("4_urjxy")
+behaviours = Array[ExtResource("5_lj8ks")]([SubResource("Resource_g7f5x")])

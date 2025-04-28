@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=4 format=3 uid="uid://i6u4qm6u7wt8"]
+
+[ext_resource type="PackedScene" uid="uid://dgg2ufqq3luyc" path="res://prefabs/resources/gold_resource.tscn" id="1_5hkrd"]
+[ext_resource type="Script" uid="uid://cbg8ftfj4s5ha" path="res://scripts/game/resourceItem/ResourceItem.gd" id="1_llwb8"]
+[ext_resource type="Texture2D" uid="uid://7w6sn763bxwm" path="res://content/bundles/Resources/Resources/G_Idle_(NoShadow).png" id="3_5hkrd"]
+
+[resource]
+script = ExtResource("1_llwb8")
+name = "Gold"
+prefab = ExtResource("1_5hkrd")
+static_icon = ExtResource("3_5hkrd")
+metadata/_custom_type_script = "uid://cbg8ftfj4s5ha"
